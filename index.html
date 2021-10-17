@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parallax</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .header {
+            position: relative;
+            height: 100vh;
+            background: url(fondo.jpg) no-repeat center center;
+            background-size: cover;
+            background-attachment: fixed;
+            overflow: hidden;
+        }
+
+        .header .logo-header {
+            position: absolute;
+            top: 4%;
+            left: 0;
+            right: 0;
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        .header .fore-bird img{
+            margin: 0px 30%;
+        }
+
+        .header .fore-bird img{
+            position: absolute;
+            top: 13rem;
+            background-repeat: no-repeat;
+            background-position: right bottom;
+            z-index: 1;
+        }
+
+        .content {
+            max-width: 1140px;
+            margin: 0 auto;
+            font-size: 20px;
+        }
+    </style>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="back-bird"></div>
+        <img src="nombre.png" class="logo-header" alt="">
+        <div class="fore-bird">
+            <img src="carlos.png" alt="">
+        </div>
+    </header>
+
+    <section id="section1">
+        <!-- CARDS -->
+        <div class="container container-cards">
+            <div class="card">
+                <div class="content">
+                    <a href="kaufmann.cl/automoviles">Ir al Sitio</a>
+                </div>
+                <img src="kaufmann.jpg" alt="">
+            </div>
+        </div>
+        <!-- FIN CARDS -->
+    </section>
+
+    <input type="text" value="12345678" maxlength="8" />
+
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script>
+
+        var logo = document.querySelector('.logo-header'),
+            blurredBird = document.querySelector('.back-bird'),
+            foreBird = document.querySelector('.fore-bird');
+
+        window.addEventListener('scroll', function () {
+            var scrolled = window.scrollY;
+            logo.style.transform = "translate(0px," + scrolled / 2 + "%)";
+            foreBird.style.transform = "translate(0px,-" + scrolled / 80 + "%)";
+        });
+
+    </script>
+</body>
+
+</html>
